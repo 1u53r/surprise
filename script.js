@@ -117,33 +117,16 @@ function animateBannerDrop() {
   }, 2.5 * 1000 + soloImages.length * 80 + 500);
 }
 
-// Add overlay for user to start animation/audio
-function showStartOverlay() {
-  if (document.getElementById('start-overlay')) return;
-  const overlay = document.createElement('div');
-  overlay.id = 'start-overlay';
-  overlay.className = 'fixed inset-0 z-[100] bg-black bg-opacity-80 flex flex-col items-center justify-center';
-  overlay.innerHTML = `
-    <button id="start-btn" class="px-8 py-4 bg-pink-500 text-white text-2xl rounded-xl shadow-lg hover:bg-pink-600 transition">Tap to Start</button>
-    <span class="mt-4 text-white text-lg">(Audio & animation will begin)</span>
-  `;
-  document.body.appendChild(overlay);
-  document.getElementById('start-btn').addEventListener('click', function() {
-    overlay.style.display = 'none';
-    animateBannerDrop();
-    var audio = document.getElementById('banner-audio');
-    if (audio) {
-      audio.currentTime = 0;
-      audio.loop = true;
-      audio.muted = false;
-      audio.volume = 1.0;
-      audio.play().catch(()=>{});
-    }
-  });
-}
-
 document.addEventListener('DOMContentLoaded', function() {
-  showStartOverlay();
+  animateBannerDrop();
+  var audio = document.getElementById('banner-audio');
+  if (audio) {
+    audio.currentTime = 0;
+    audio.loop = true;
+    audio.muted = false;
+    audio.volume = 1.0;
+    audio.play().catch(()=>{});
+  }
 });
 
 // --- Draggable Stacked Images: Mouse & Touch Support ---
