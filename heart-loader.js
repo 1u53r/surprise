@@ -1,5 +1,6 @@
 // Heart Loader Integration Script
 (function() {
+  document.body.classList.add('loading');
   // Create loader container
   var loader = document.createElement('div');
   loader.id = 'heart-loader';
@@ -87,6 +88,7 @@
       loader.style.opacity = 0;
       setTimeout(function() {
         loader.remove();
+        document.body.classList.remove('loading');
       }, 600);
     }, 400); // slight delay for smoothness
   });
