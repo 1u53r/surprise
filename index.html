@@ -2,29 +2,88 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Her Journey</title>
 
   <link rel="stylesheet" href="style.css">
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-<style>
-  .bg-journey {
-    background-image: url('images/bg.jpeg') !important;
-    background-size: cover;
-    background-position: center;
-    background-repeat:no-repeat;
-  } 
-
-  body {
+  <style>
+    .bg-journey {
+      background-image: url('images/bg.jpeg') !important;
+      background-size: cover;
+      background-position: center;
+      background-repeat:no-repeat;
+    }
+    body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-
     p{
       font-family: 'Zeyada';
     }
-</style>
+    /* Responsive font sizes */
+    h1, h2, h3, h4, h5, h6 {
+      word-break: break-word;
+    }
+    .typed-text {
+      font-size: 1.1rem;
+    }
+    @media (max-width: 640px) {
+      h1 { font-size: 2rem !important; }
+      h2 { font-size: 1.3rem !important; }
+      .typed-text { font-size: 0.95rem; }
+      .bg-journey { background-position: top; }
+    }
+    @media (max-width: 480px) {
+      h1 { font-size: 1.3rem !important; }
+      h2 { font-size: 1.1rem !important; }
+      .typed-text { font-size: 0.85rem; }
+    }
+    /* Responsive image containers */
+    .responsive-img-section img {
+      max-width: 100vw;
+      height: auto;
+      width: 100%;
+      border-radius: 1rem;
+    }
+    .responsive-section {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    /* Responsive draggable images */
+    @media (max-width: 640px) {
+      #stacked-images > div {
+        width: 180px !important;
+        height: 250px !important;
+      }
+      .draggable-img {
+        width: 150px !important;
+        height: 200px !important;
+      }
+    }
+    @media (max-width: 400px) {
+      #stacked-images > div {
+        width: 120px !important;
+        height: 160px !important;
+      }
+      .draggable-img {
+        width: 100px !important;
+        height: 120px !important;
+      }
+    }
+    /* Responsive section padding */
+    @media (max-width: 640px) {
+      section { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+    }
+    @media (max-width: 400px) {
+      section { padding-top: 0.5rem !important; padding-bottom: 0.5rem !important; }
+    }
+    /* Responsive scroll down indicator */
+    @media (max-width: 640px) {
+      .animate-bounce span { font-size: 0.9rem; }
+      .animate-bounce svg { width: 1.2rem; height: 1.2rem; }
+    }
+  </style>
 
   <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
@@ -35,52 +94,65 @@
 
   <!-- Navbar -->
   <nav class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <div class="text-2xl font-bold text-pink-600">Her Journey</div>
-        <div class="hidden md:flex space-x-6">
-          <a href="#" class="text-gray-700 hover:text-pink-600 transition duration-300">MAIN</a>
-          <a href="#" class="text-gray-700 hover:text-pink-600 transition duration-300">LOVE</a>
-          <a href="#" class="text-gray-700 hover:text-pink-600 transition duration-300">SMILE</a>
-          <a href="#" class="text-gray-700 hover:text-pink-600 transition duration-300">CUTENESS</a>
-          <a href="#" class="text-gray-700 hover:text-pink-600 transition duration-300">ANGER</a>
-          <a href="#" class="text-gray-700 hover:text-pink-600 transition duration-300">INTELLIGENCE</a>
-          <a href="#" class="text-gray-700 hover:text-pink-600 transition duration-300">STRENGTH</a>
-          <a href="#" class="text-gray-700 hover:text-pink-600 transition duration-300">INNOCENCE</a>
+    <div class="max-w-7xl mx-auto px-2 sm:px-4">
+      <div class="flex items-center justify-between h-14 sm:h-16">
+        <div class="text-lg sm:text-2xl font-bold text-pink-600">Her Journey</div>
+        <button class="md:hidden flex items-center px-3 py-2 border rounded text-pink-600 border-pink-600" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <div class="hidden md:flex space-x-3 sm:space-x-6">
+          <a href="#" class="text-gray-700 hover:text-pink-600 transition duration-300 text-sm sm:text-base">MAIN</a>
+          <a href="#" class="text-gray-700 hover:text-pink-600 transition duration-300 text-sm sm:text-base">LOVE</a>
+          <a href="#" class="text-gray-700 hover:text-pink-600 transition duration-300 text-sm sm:text-base">SMILE</a>
+          <a href="#" class="text-gray-700 hover:text-pink-600 transition duration-300 text-sm sm:text-base">CUTENESS</a>
+          <a href="#" class="text-gray-700 hover:text-pink-600 transition duration-300 text-sm sm:text-base">ANGER</a>
+          <a href="#" class="text-gray-700 hover:text-pink-600 transition duration-300 text-sm sm:text-base">INTELLIGENCE</a>
+          <a href="#" class="text-gray-700 hover:text-pink-600 transition duration-300 text-sm sm:text-base">STRENGTH</a>
+          <a href="#" class="text-gray-700 hover:text-pink-600 transition duration-300 text-sm sm:text-base">INNOCENCE</a>
         </div>
+      </div>
+      <div id="mobile-menu" class="md:hidden hidden flex-col space-y-2 mt-2 bg-white rounded shadow px-4 py-2">
+        <a href="#" class="block text-gray-700 hover:text-pink-600 transition duration-300">MAIN</a>
+        <a href="#" class="block text-gray-700 hover:text-pink-600 transition duration-300">LOVE</a>
+        <a href="#" class="block text-gray-700 hover:text-pink-600 transition duration-300">SMILE</a>
+        <a href="#" class="block text-gray-700 hover:text-pink-600 transition duration-300">CUTENESS</a>
+        <a href="#" class="block text-gray-700 hover:text-pink-600 transition duration-300">ANGER</a>
+        <a href="#" class="block text-gray-700 hover:text-pink-600 transition duration-300">INTELLIGENCE</a>
+        <a href="#" class="block text-gray-700 hover:text-pink-600 transition duration-300">STRENGTH</a>
+        <a href="#" class="block text-gray-700 hover:text-pink-600 transition duration-300">INNOCENCE</a>
       </div>
     </div>
   </nav>
 
   <!-- Landing Banner with Animated Image Drop -->
   <audio id="banner-audio" src="audio/sound.mp3" preload="auto"></audio>
-  <section id="animated-banner" class="relative w-screen h-screen pt-16 overflow-hidden">
+  <section id="animated-banner" class="relative w-full h-[60vh] sm:h-screen pt-16 overflow-hidden responsive-section">
     <div id="banner-anim" class="absolute inset-0 w-full h-full z-20"></div>
     <img 
       id="main-banner-img"
       src="solo/banner.png" 
       alt="Banner" 
-      class="hidden sm:block absolute inset-0 w-[99vw] h-[99vh] object-cover z-0 transition-opacity duration-1000 opacity-0" 
-    />
+      class="hidden sm:block absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-1000 opacity-0" 
+      style="max-width:100vw; max-height:100vh;"/>
     <img 
       id="main-banner-img-mobile"
       src="solo/small-banner.png" 
       alt="Banner Mobile" 
-      class="block sm:hidden absolute inset-0 w-[99vw] h-[99vh] object-cover z-0 transition-opacity duration-1000 opacity-0" 
-    />
+      class="block sm:hidden absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-1000 opacity-0" 
+      style="max-width:100vw; max-height:100vh;"/>
     <!-- Overlay with Text -->
     <div class="absolute inset-0 bg-black bg-opacity-40 z-30 flex items-center justify-center">
       <h1 
-        class="text-white text-4xl md:text-6xl font-extrabold text-center px-4"
+        class="text-white text-2xl sm:text-4xl md:text-6xl font-extrabold text-center px-2 sm:px-4"
         data-aos="fade-down"
         data-aos-duration="1200"
       >
         The Beautiful Journey of Her Life
       </h1>
       <!-- Scroll Down Indicator -->
-      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
-        <span class="text-white text-lg">Scroll Down</span>
-        <svg class="w-6 h-6 text-white mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <div class="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+        <span class="text-white text-base sm:text-lg">Scroll Down</span>
+        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
         </svg>
       </div>
@@ -89,71 +161,71 @@
 
 
   <!-- Stacked Images of Her (Draggable) -->
-  <section id="stacked-images" class="w-[99vw] min-h-[80vh] bg-gradient-to-b from-white to-pink-100 flex flex-col items-center justify-center py-24 bg-journey relative overflow-hidden">
-    <div class="relative w-[350px] h-[500px] sm:w-[250px] sm:h-[350px] xs:w-[180px] xs:h-[250px]">
-      <div class="draggable-img absolute top-0 left-0 w-[320px] h-[480px] sm:w-[220px] sm:h-[320px] xs:w-[150px] xs:h-[200px] border-4  rounded-xl shadow-xl bg-white flex items-center justify-center cursor-move rotate-[-10deg] z-30" draggable="true" style="z-index:3;">
-        <img src="solo/IMG_20241222_163044.jpg" alt="Her 1" class="w-full h-full object-cover rounded-xl" />
+  <section id="stacked-images" class="w-full min-h-[60vh] bg-gradient-to-b from-white to-pink-100 flex flex-col items-center justify-center py-16 bg-journey relative overflow-hidden responsive-section">
+    <div class="relative w-[350px] h-[500px] sm:w-[250px] sm:h-[350px] xs:w-[180px] xs:h-[250px]" style="max-width:100vw;">
+      <div class="draggable-img absolute top-0 left-0 w-[320px] h-[480px] sm:w-[220px] sm:h-[320px] xs:w-[150px] xs:h-[200px] border-4  rounded-xl shadow-xl bg-white flex items-center justify-center cursor-move rotate-[-10deg] z-30" draggable="true" style="z-index:3; max-width:100vw;">
+        <img src="solo/IMG_20241222_163044.jpg" alt="Her 1" class="w-full h-full object-cover rounded-xl responsive-img-section" />
       </div>
-      <div class="draggable-img absolute top-0 left-0 w-[320px] h-[480px] sm:w-[220px] sm:h-[320px] xs:w-[150px] xs:h-[200px] border-4  rounded-xl shadow-xl bg-white flex items-center justify-center cursor-move rotate-[8deg] z-20" draggable="true" style="z-index:2;">
-        <img src="solo/IMG-20241124-WA0017.jpg" alt="Her 2" class="w-full h-full object-cover rounded-xl" />
+      <div class="draggable-img absolute top-0 left-0 w-[320px] h-[480px] sm:w-[220px] sm:h-[320px] xs:w-[150px] xs:h-[200px] border-4  rounded-xl shadow-xl bg-white flex items-center justify-center cursor-move rotate-[8deg] z-20" draggable="true" style="z-index:2; max-width:100vw;">
+        <img src="solo/IMG-20241124-WA0017.jpg" alt="Her 2" class="w-full h-full object-cover rounded-xl responsive-img-section" />
       </div>
-      <div class="draggable-img absolute top-0 left-0 w-[320px] h-[480px] sm:w-[220px] sm:h-[320px] xs:w-[150px] xs:h-[200px] border-4 rounded-xl shadow-xl bg-white flex items-center justify-center cursor-move rotate-[3deg] z-10" draggable="true" style="z-index:1;">
-        <img src="solo/IMG-20241205-WA0012.jpg" alt="Her 3" class="w-full h-full object-cover rounded-xl" />
+      <div class="draggable-img absolute top-0 left-0 w-[320px] h-[480px] sm:w-[220px] sm:h-[320px] xs:w-[150px] xs:h-[200px] border-4 rounded-xl shadow-xl bg-white flex items-center justify-center cursor-move rotate-[3deg] z-10" draggable="true" style="z-index:1; max-width:100vw;">
+        <img src="solo/IMG-20241205-WA0012.jpg" alt="Her 3" class="w-full h-full object-cover rounded-xl responsive-img-section" />
       </div>
     </div>
   </section>
 
   <!-- Her Cuteness Section -->
-  <section class="w-full py-16 bg-gradient-to-b from-pink-100 to-white flex flex-col md:flex-row items-center justify-center gap-8">
-    <img src="solo/IMG-20241215-WA0017.jpg" alt="Her Cuteness" class="w-64 h-80 object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105" data-aos="fade-right" data-aos-duration="1200" />
-    <div class="max-w-lg bg-white bg-opacity-80 rounded-2xl p-8 shadow-lg transition-opacity duration-700 ease-in-out" data-aos="fade-left" data-aos-duration="1200">
-      <h2 class="text-3xl font-bold text-pink-600 mb-4">Her Cuteness</h2>
-      <p class="text-lg text-gray-700">Her cuteness is not just in her looks, but in every little thing she does—her giggles, her playful expressions, and the way she brightens up every room she enters.</p>
+  <section class="w-full py-12 md:py-16 bg-gradient-to-b from-pink-100 to-white flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 responsive-section">
+    <img src="solo/IMG-20241215-WA0017.jpg" alt="Her Cuteness" class="w-48 h-64 md:w-64 md:h-80 object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105 responsive-img-section" data-aos="fade-right" data-aos-duration="1200" />
+    <div class="max-w-lg w-full bg-white bg-opacity-80 rounded-2xl p-4 md:p-8 shadow-lg transition-opacity duration-700 ease-in-out" data-aos="fade-left" data-aos-duration="1200">
+      <h2 class="text-2xl md:text-3xl font-bold text-pink-600 mb-2 md:mb-4">Her Cuteness</h2>
+      <p class="text-base md:text-lg text-gray-700">Her cuteness is not just in her looks, but in every little thing she does—her giggles, her playful expressions, and the way she brightens up every room she enters.</p>
     </div>
   </section>
 
   <!-- Her Smile Section -->
-  <section class="w-full py-16 bg-gradient-to-b from-white to-pink-50 flex flex-col md:flex-row-reverse items-center justify-center gap-8">
-    <img src="solo/IMG-20241205-WA0012.jpg" alt="Her Smile" class="w-64 h-80 object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105" data-aos="fade-left" data-aos-duration="1200" />
-    <div class="max-w-lg bg-white bg-opacity-80 rounded-2xl p-8 shadow-lg transition-opacity duration-700 ease-in-out" data-aos="fade-right" data-aos-duration="1200">
-      <h2 class="text-3xl font-bold text-pink-600 mb-4">Her Smile</h2>
-      <p class="text-lg text-gray-700">Her smile is the most beautiful thing in the world. It can melt hearts, lift spirits, and make even the dullest day feel special.</p>
+  <section class="w-full py-12 md:py-16 bg-gradient-to-b from-white to-pink-50 flex flex-col md:flex-row-reverse items-center justify-center gap-6 md:gap-8 responsive-section">
+    <img src="solo/IMG-20241205-WA0012.jpg" alt="Her Smile" class="w-48 h-64 md:w-64 md:h-80 object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105 responsive-img-section" data-aos="fade-left" data-aos-duration="1200" />
+    <div class="max-w-lg w-full bg-white bg-opacity-80 rounded-2xl p-4 md:p-8 shadow-lg transition-opacity duration-700 ease-in-out" data-aos="fade-right" data-aos-duration="1200">
+      <h2 class="text-2xl md:text-3xl font-bold text-pink-600 mb-2 md:mb-4">Her Smile</h2>
+      <p class="text-base md:text-lg text-gray-700">Her smile is the most beautiful thing in the world. It can melt hearts, lift spirits, and make even the dullest day feel special.</p>
     </div>
   </section>
 
   <!-- Her Love Section -->
-  <section class="w-full py-16 bg-gradient-to-b from-pink-50 to-white flex flex-col md:flex-row items-center justify-center gap-8">
-    <img src="solo/IMG-20250119-WA0059.jpg" alt="Her Love" class="w-64 h-80 object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105" data-aos="fade-right" data-aos-duration="1200" />
-    <div class="max-w-lg bg-white bg-opacity-80 rounded-2xl p-8 shadow-lg transition-opacity duration-700 ease-in-out" data-aos="fade-left" data-aos-duration="1200">
-      <h2 class="text-3xl font-bold text-pink-600 mb-4">Her Love</h2>
-      <p class="text-lg text-gray-700">Her love is pure and unconditional. She cares deeply for those around her, always putting others before herself and spreading warmth wherever she goes.</p>
+  <section class="w-full py-12 md:py-16 bg-gradient-to-b from-pink-50 to-white flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 responsive-section">
+    <img src="solo/IMG-20250119-WA0059.jpg" alt="Her Love" class="w-48 h-64 md:w-64 md:h-80 object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105 responsive-img-section" data-aos="fade-right" data-aos-duration="1200" />
+    <div class="max-w-lg w-full bg-white bg-opacity-80 rounded-2xl p-4 md:p-8 shadow-lg transition-opacity duration-700 ease-in-out" data-aos="fade-left" data-aos-duration="1200">
+      <h2 class="text-2xl md:text-3xl font-bold text-pink-600 mb-2 md:mb-4">Her Love</h2>
+      <p class="text-base md:text-lg text-gray-700">Her love is pure and unconditional. She cares deeply for those around her, always putting others before herself and spreading warmth wherever she goes.</p>
     </div>
   </section>
 
   <!-- Her Innocence Section -->
-  <section class="w-full py-16 bg-gradient-to-b from-white to-pink-100 flex flex-col md:flex-row-reverse items-center justify-center gap-8">
-    <img src="solo/IMG-20250119-WA0122.jpg" alt="Her Innocence" class="w-64 h-80 object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105" data-aos="fade-left" data-aos-duration="1200" />
-    <div class="max-w-lg bg-white bg-opacity-80 rounded-2xl p-8 shadow-lg transition-opacity duration-700 ease-in-out" data-aos="fade-right" data-aos-duration="1200">
-      <h2 class="text-3xl font-bold text-pink-600 mb-4">Her Innocence</h2>
-      <p class="text-lg text-gray-700">Her innocence is reflected in her honest eyes and genuine heart. She sees the world with wonder and always believes in the good in people.</p>
+  <section class="w-full py-12 md:py-16 bg-gradient-to-b from-white to-pink-100 flex flex-col md:flex-row-reverse items-center justify-center gap-6 md:gap-8 responsive-section">
+    <img src="solo/IMG-20250119-WA0122.jpg" alt="Her Innocence" class="w-48 h-64 md:w-64 md:h-80 object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105 responsive-img-section" data-aos="fade-left" data-aos-duration="1200" />
+    <div class="max-w-lg w-full bg-white bg-opacity-80 rounded-2xl p-4 md:p-8 shadow-lg transition-opacity duration-700 ease-in-out" data-aos="fade-right" data-aos-duration="1200">
+      <h2 class="text-2xl md:text-3xl font-bold text-pink-600 mb-2 md:mb-4">Her Innocence</h2>
+      <p class="text-base md:text-lg text-gray-700">Her innocence is reflected in her honest eyes and genuine heart. She sees the world with wonder and always believes in the good in people.</p>
     </div>
   </section>
 
   <!-- Her Strength Section -->
-  <section class="w-full py-16 bg-gradient-to-b from-pink-100 to-white flex flex-col md:flex-row items-center justify-center gap-8">
-    <img src="solo/IMG-20250505-WA0031.jpg" alt="Her Strength" class="w-64 h-80 object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105" data-aos="fade-right" data-aos-duration="1200" />
-    <div class="max-w-lg bg-white bg-opacity-80 rounded-2xl p-8 shadow-lg transition-opacity duration-700 ease-in-out" data-aos="fade-left" data-aos-duration="1200">
-      <h2 class="text-3xl font-bold text-pink-600 mb-4">Her Strength</h2>
-      <p class="text-lg text-gray-700">Her strength is inspiring. She faces every challenge with courage and never gives up, no matter how tough life gets.</p>
+  <section class="w-full py-12 md:py-16 bg-gradient-to-b from-pink-100 to-white flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 responsive-section">
+    <img src="solo/IMG-20250505-WA0031.jpg" alt="Her Strength" class="w-48 h-64 md:w-64 md:h-80 object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105 responsive-img-section" data-aos="fade-right" data-aos-duration="1200" />
+    <div class="max-w-lg w-full bg-white bg-opacity-80 rounded-2xl p-4 md:p-8 shadow-lg transition-opacity duration-700 ease-in-out" data-aos="fade-left" data-aos-duration="1200">
+      <h2 class="text-2xl md:text-3xl font-bold text-pink-600 mb-2 md:mb-4">Her Strength</h2>
+      <p class="text-base md:text-lg text-gray-700">Her strength is inspiring. She faces every challenge with courage and never gives up, no matter how tough life gets.</p>
     </div>
   </section>
 
   <!-- Her Intelligence Section -->
-  <section class="w-full py-16 bg-gradient-to-b from-white to-pink-50 flex flex-col md:flex-row-reverse items-center justify-center gap-8">
-    <img src="solo/IMG-20250205-WA0046 (1).jpg" alt="Her Intelligence" class="w-64 h-80 object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105" data-aos="fade-left" data-aos-duration="1200" />
-    <div class="max-w-lg bg-white bg-opacity-80 rounded-2xl p-8 shadow-lg transition-opacity duration-700 ease-in-out" data-aos="fade-right" data-aos-duration="1200">
-      <h2 class="text-3xl font-bold text-pink-600 mb-4">Her Intelligence</h2>
-      <p class="text-lg text-gray-700">Her intelligence shines through in her words and actions. She is thoughtful, quick-witted, and always eager to learn new things.</p>
+  <section class="w-full py-12 md:py-16 bg-gradient-to-b from-white to-pink-50 flex flex-col md:flex-row-reverse items-center justify-center gap-6 md:gap-8 responsive-section">
+    <img src="solo/IMG-20250205-WA0046 (1).jpg" alt="Her Intelligence" class="w-48 h-64 md:w-64 md:h-80 object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105 responsive-img-section" data-aos="fade-left" data-aos-duration="1200" />
+    <div class="max-w-lg w-full bg-white bg-opacity-80 rounded-2xl p-4 md:p-8 shadow-lg transition-opacity duration-700 ease-in-out" data-aos="fade-right" data-aos-duration="1200">
+      <h2 class="text-2xl md:text-3xl font-bold text-pink-600 mb-2 md:mb-4">Her Intelligence</h2>
+      <p class="text-base md:text-lg text-gray-700">Her intelligence shines through in her words and actions. She is thoughtful, quick-witted, and always eager to learn new things.</p>
     </div>
   </section>
 
@@ -167,34 +239,40 @@
   <script src="script.js"></script>
 
   <style>
-.falling-image {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 10px;
-  opacity: 0;
-  transform-style: preserve-3d;
-  transform: translate3d(var(--start-x), var(--start-y), var(--start-z)) rotate(var(--start-rot));
-  z-index: 30;
-}
-@keyframes smashDrop {
-  0% {
-    opacity: 0;
-    transform: translate3d(var(--start-x), var(--start-y), var(--start-z)) rotate(var(--start-rot));
-  }
-  70% {
-    opacity: 1;
-    transform: translate3d(var(--land-x), var(--land-y), 0) rotate(0deg);
-  }
-  90% {
-    transform: translate3d(calc(var(--land-x) + 5px), calc(var(--land-y) - 5px), 0) rotate(10deg);
-  }
-  100% {
-    opacity: 1;
-    transform: translate3d(var(--land-x), var(--land-y), 0) rotate(0deg);
-  }
-}
+    .falling-image {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 10px;
+      opacity: 0;
+      transform-style: preserve-3d;
+      transform: translate3d(var(--start-x), var(--start-y), var(--start-z)) rotate(var(--start-rot));
+      z-index: 30;
+    }
+    @media (min-width: 640px) {
+      .falling-image {
+        width: 120px;
+        height: 120px;
+      }
+    }
+    @keyframes smashDrop {
+      0% {
+        opacity: 0;
+        transform: translate3d(var(--start-x), var(--start-y), var(--start-z)) rotate(var(--start-rot));
+      }
+      70% {
+        opacity: 1;
+        transform: translate3d(var(--land-x), var(--land-y), 0) rotate(0deg);
+      }
+      90% {
+        transform: translate3d(calc(var(--land-x) + 5px), calc(var(--land-y) - 5px), 0) rotate(10deg);
+      }
+      100% {
+        opacity: 1;
+        transform: translate3d(var(--land-x), var(--land-y), 0) rotate(0deg);
+      }
+    }
   </style>
 
 </body>
