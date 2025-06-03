@@ -13,15 +13,21 @@
       width: 100vw;
       max-width: 100vw;
       overflow-x: hidden !important;
+      min-height: 100vh;
     }
+
     .bg-journey {
       background-image: url('images/bg.jpeg') !important;
-      background-size: cover;
-      background-position: center;
-      background-repeat:no-repeat;
+      background-size: cover !important;
+      background-position: center !important;
+      background-repeat:no-repeat !important;
+      background-attachment: fixed !important;
     }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      /* Remove background-color to avoid overlaying the image */
+      /* background-color: 'white'; */
     }
     p{
       font-family: 'Zeyada';
@@ -146,46 +152,10 @@
 
 
 </head>
-<body class="bg-white text-gray-800">
+<body class="bg-white text-gray-800 bg-journey">
 
-  <!-- Navbar -->
-  <nav class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
-    <div class="max-w-7xl mx-auto px-2 sm:px-4">
-      <div class="flex items-center justify-between h-14 sm:h-16">
-        <div class="text-lg sm:text-2xl font-bold text-pink-600">Her Journey</div>
-        <button class="md:hidden flex items-center px-3 py-2 border rounded text-pink-600 border-pink-600" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
-        <div class="hidden md:flex space-x-3 sm:space-x-6">
-          <a href="#" class="text-gray-700 hover:text-pink-600 transition duration-300 text-sm sm:text-base">MAIN</a>
-          <a href="#" class="text-gray-700 hover:text-pink-600 transition duration-300 text-sm sm:text-base">LOVE</a>
-          <a href="#" class="text-gray-700 hover:text-pink-600 transition duration-300 text-sm sm:text-base">SMILE</a>
-          <a href="#" class="text-gray-700 hover:text-pink-600 transition duration-300 text-sm sm:text-base">CUTENESS</a>
-          <a href="#" class="text-gray-700 hover:text-pink-600 transition duration-300 text-sm sm:text-base">ANGER</a>
-          <a href="#" class="text-gray-700 hover:text-pink-600 transition duration-300 text-sm sm:text-base">INTELLIGENCE</a>
-          <a href="#" class="text-gray-700 hover:text-pink-600 transition duration-300 text-sm sm:text-base">STRENGTH</a>
-          <a href="#" class="text-gray-700 hover:text-pink-600 transition duration-300 text-sm sm:text-base">INNOCENCE</a>
-        </div>
-      </div>
-      <div id="mobile-menu" class="md:hidden hidden flex-col space-y-2 mt-2 bg-white rounded shadow px-4 py-2">
-        <a href="#" class="block text-gray-700 hover:text-pink-600 transition duration-300">MAIN</a>
-        <a href="#" class="block text-gray-700 hover:text-pink-600 transition duration-300">LOVE</a>
-        <a href="#" class="block text-gray-700 hover:text-pink-600 transition duration-300">SMILE</a>
-        <a href="#" class="block text-gray-700 hover:text-pink-600 transition duration-300">CUTENESS</a>
-        <a href="#" class="block text-gray-700 hover:text-pink-600 transition duration-300">ANGER</a>
-        <a href="#" class="block text-gray-700 hover:text-pink-600 transition duration-300">INTELLIGENCE</a>
-        <a href="#" class="block text-gray-700 hover:text-pink-600 transition duration-300">STRENGTH</a>
-        <a href="#" class="block text-gray-700 hover:text-pink-600 transition duration-300">INNOCENCE</a>
-      </div>
-    </div>
-  </nav>
-  <div class="navbar-spacer"></div>
-
-  <!-- Spacer for Navbar -->
-  <div class="navbar-spacer"></div>
-
+  
   <!-- Landing Banner with Animated Image Drop -->
-  <audio id="banner-audio" src="audio/sound.mp3" preload="auto"></audio>
   <section id="animated-banner" class="relative w-full h-[60vh] sm:h-screen pt-16 overflow-hidden responsive-section">
     <div id="banner-anim" class="absolute inset-0 w-full h-full z-20"></div>
     <img 
@@ -221,7 +191,7 @@
 
 
   <!-- Stacked Images of Her (Draggable) -->
-  <section id="stacked-images" class="w-full min-h-[60vh] bg-gradient-to-b from-white to-pink-100 flex flex-col items-center justify-center py-16 bg-journey relative overflow-hidden responsive-section">
+  <!-- <section id="stacked-images" class="w-full min-h-[60vh] bg-gradient-to-b from-white to-pink-100 flex flex-col items-center justify-center py-16 bg-journey relative overflow-hidden responsive-section">
     <div class="relative w-[350px] h-[500px] sm:w-[250px] sm:h-[350px] xs:w-[180px] xs:h-[250px]" style="max-width:100vw;">
       <div class="draggable-img absolute top-0 left-0 w-[320px] h-[480px] sm:w-[220px] sm:h-[320px] xs:w-[150px] xs:h-[200px] border-4  rounded-xl shadow-xl bg-white flex items-center justify-center cursor-move rotate-[-10deg] z-30" draggable="true" style="z-index:3; max-width:100vw;">
         <img src="solo/IMG_20241222_163044.jpg" alt="Her 1" class="w-full h-full object-cover rounded-xl responsive-img-section" />
@@ -233,59 +203,59 @@
         <img src="solo/IMG-20241205-WA0012.jpg" alt="Her 3" class="w-full h-full object-cover rounded-xl responsive-img-section" />
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- Her Cuteness Section -->
-  <section class="w-full py-12 md:py-16 bg-gradient-to-b from-pink-100 to-white flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 responsive-section">
-    <img src="solo/IMG-20241215-WA0017.jpg" alt="Her Cuteness" class="w-48 h-64 md:w-64 md:h-80 object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105 responsive-img-section" data-aos="fade-right" data-aos-duration="1200" />
+  <section class="w-full py-12 md:py-16 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 responsive-section">
+    <img src="solo/IMG-20241215-WA0017.jpg" alt="Her Cuteness" class="w-56 h-80 md:w-80 md:h-[28rem] object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105 responsive-img-section" data-aos="fade-right" data-aos-duration="1200" />
     <div class="max-w-lg w-full bg-white bg-opacity-80 rounded-2xl p-4 md:p-8 shadow-lg transition-opacity duration-700 ease-in-out" data-aos="fade-left" data-aos-duration="1200">
       <h2 class="text-2xl md:text-3xl font-bold text-pink-600 mb-2 md:mb-4">Her Cuteness</h2>
-      <p class="text-base md:text-lg text-gray-700">Her cuteness is not just in her looks, but in every little thing she does—her giggles, her playful expressions, and the way she brightens up every room she enters.</p>
+      <p class="text-base md:text-lg text-gray-700"><span id="typed-cuteness"></span></p>
     </div>
   </section>
 
   <!-- Her Smile Section -->
-  <section class="w-full py-12 md:py-16 bg-gradient-to-b from-white to-pink-50 flex flex-col md:flex-row-reverse items-center justify-center gap-6 md:gap-8 responsive-section">
-    <img src="solo/IMG-20241205-WA0012.jpg" alt="Her Smile" class="w-48 h-64 md:w-64 md:h-80 object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105 responsive-img-section" data-aos="fade-left" data-aos-duration="1200" />
+  <section class="w-full py-12 md:py-16  flex flex-col md:flex-row-reverse items-center justify-center gap-8 md:gap-12 responsive-section">
+    <img src="solo/IMG-20241205-WA0012.jpg" alt="Her Smile" class="w-56 h-80 md:w-80 md:h-[28rem] object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105 responsive-img-section" data-aos="fade-left" data-aos-duration="1200" />
     <div class="max-w-lg w-full bg-white bg-opacity-80 rounded-2xl p-4 md:p-8 shadow-lg transition-opacity duration-700 ease-in-out" data-aos="fade-right" data-aos-duration="1200">
       <h2 class="text-2xl md:text-3xl font-bold text-pink-600 mb-2 md:mb-4">Her Smile</h2>
-      <p class="text-base md:text-lg text-gray-700">Her smile is the most beautiful thing in the world. It can melt hearts, lift spirits, and make even the dullest day feel special.</p>
+      <p class="text-base md:text-lg text-gray-700"><span id="typed-smile"></span></p>
     </div>
   </section>
 
   <!-- Her Love Section -->
-  <section class="w-full py-12 md:py-16 bg-gradient-to-b from-pink-50 to-white flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 responsive-section">
-    <img src="solo/IMG-20250119-WA0059.jpg" alt="Her Love" class="w-48 h-64 md:w-64 md:h-80 object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105 responsive-img-section" data-aos="fade-right" data-aos-duration="1200" />
+  <section class="w-full py-12 md:py-16  flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 responsive-section">
+    <img src="solo/IMG-20250119-WA0059.jpg" alt="Her Love" class="w-56 h-80 md:w-80 md:h-[28rem] object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105 responsive-img-section" data-aos="fade-right" data-aos-duration="1200" />
     <div class="max-w-lg w-full bg-white bg-opacity-80 rounded-2xl p-4 md:p-8 shadow-lg transition-opacity duration-700 ease-in-out" data-aos="fade-left" data-aos-duration="1200">
       <h2 class="text-2xl md:text-3xl font-bold text-pink-600 mb-2 md:mb-4">Her Love</h2>
-      <p class="text-base md:text-lg text-gray-700">Her love is pure and unconditional. She cares deeply for those around her, always putting others before herself and spreading warmth wherever she goes.</p>
+      <p class="text-base md:text-lg text-gray-700"><span id="typed-love"></span></p>
     </div>
   </section>
 
   <!-- Her Innocence Section -->
-  <section class="w-full py-12 md:py-16 bg-gradient-to-b from-white to-pink-100 flex flex-col md:flex-row-reverse items-center justify-center gap-6 md:gap-8 responsive-section">
-    <img src="solo/IMG-20250119-WA0122.jpg" alt="Her Innocence" class="w-48 h-64 md:w-64 md:h-80 object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105 responsive-img-section" data-aos="fade-left" data-aos-duration="1200" />
+  <section class="w-full py-12 md:py-16  flex flex-col md:flex-row-reverse items-center justify-center gap-8 md:gap-12 responsive-section">
+    <img src="solo/IMG-20250119-WA0122.jpg" alt="Her Innocence" class="w-56 h-80 md:w-80 md:h-[28rem] object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105 responsive-img-section" data-aos="fade-left" data-aos-duration="1200" />
     <div class="max-w-lg w-full bg-white bg-opacity-80 rounded-2xl p-4 md:p-8 shadow-lg transition-opacity duration-700 ease-in-out" data-aos="fade-right" data-aos-duration="1200">
       <h2 class="text-2xl md:text-3xl font-bold text-pink-600 mb-2 md:mb-4">Her Innocence</h2>
-      <p class="text-base md:text-lg text-gray-700">Her innocence is reflected in her honest eyes and genuine heart. She sees the world with wonder and always believes in the good in people.</p>
+      <p class="text-base md:text-lg text-gray-700"><span id="typed-innocence"></span></p>
     </div>
   </section>
 
   <!-- Her Strength Section -->
-  <section class="w-full py-12 md:py-16 bg-gradient-to-b from-pink-100 to-white flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 responsive-section">
-    <img src="solo/IMG-20250505-WA0031.jpg" alt="Her Strength" class="w-48 h-64 md:w-64 md:h-80 object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105 responsive-img-section" data-aos="fade-right" data-aos-duration="1200" />
+  <section class="w-full py-12 md:py-16  flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 responsive-section">
+    <img src="solo/IMG-20250505-WA0031.jpg" alt="Her Strength" class="w-56 h-80 md:w-80 md:h-[28rem] object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105 responsive-img-section" data-aos="fade-right" data-aos-duration="1200" />
     <div class="max-w-lg w-full bg-white bg-opacity-80 rounded-2xl p-4 md:p-8 shadow-lg transition-opacity duration-700 ease-in-out" data-aos="fade-left" data-aos-duration="1200">
       <h2 class="text-2xl md:text-3xl font-bold text-pink-600 mb-2 md:mb-4">Her Strength</h2>
-      <p class="text-base md:text-lg text-gray-700">Her strength is inspiring. She faces every challenge with courage and never gives up, no matter how tough life gets.</p>
+      <p class="text-base md:text-lg text-gray-700"><span id="typed-strength"></span></p>
     </div>
   </section>
 
   <!-- Her Intelligence Section -->
-  <section class="w-full py-12 md:py-16 bg-gradient-to-b from-white to-pink-50 flex flex-col md:flex-row-reverse items-center justify-center gap-6 md:gap-8 responsive-section">
-    <img src="solo/IMG-20250205-WA0046 (1).jpg" alt="Her Intelligence" class="w-48 h-64 md:w-64 md:h-80 object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105 responsive-img-section" data-aos="fade-left" data-aos-duration="1200" />
+  <section class="w-full py-12 md:py-16  flex flex-col md:flex-row-reverse items-center justify-center gap-8 md:gap-12 responsive-section">
+    <img src="solo/IMG-20250205-WA0046 (1).jpg" alt="Her Intelligence" class="w-56 h-80 md:w-80 md:h-[28rem] object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105 responsive-img-section" data-aos="fade-left" data-aos-duration="1200" />
     <div class="max-w-lg w-full bg-white bg-opacity-80 rounded-2xl p-4 md:p-8 shadow-lg transition-opacity duration-700 ease-in-out" data-aos="fade-right" data-aos-duration="1200">
       <h2 class="text-2xl md:text-3xl font-bold text-pink-600 mb-2 md:mb-4">Her Intelligence</h2>
-      <p class="text-base md:text-lg text-gray-700">Her intelligence shines through in her words and actions. She is thoughtful, quick-witted, and always eager to learn new things.</p>
+      <p class="text-base md:text-lg text-gray-700"><span id="typed-intelligence"></span></p>
     </div>
   </section>
 
@@ -334,6 +304,53 @@
       }
     }
   </style>
+
+  <!-- Typed.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      new Typed('#typed-cuteness', {
+        strings: ["Her cuteness is not just in her looks, but in every little thing she does—her giggles, her playful expressions, and the way she brightens up every room she enters."],
+        typeSpeed: 30,
+        showCursor: false,
+        onComplete: function() {
+          new Typed('#typed-smile', {
+            strings: ["Her smile is the most beautiful thing in the world. It can melt hearts, lift spirits, and make even the dullest day feel special."],
+            typeSpeed: 30,
+            showCursor: false,
+            onComplete: function() {
+              new Typed('#typed-love', {
+                strings: ["Her love is pure and unconditional. She cares deeply for those around her, always putting others before herself and spreading warmth wherever she goes."],
+                typeSpeed: 30,
+                showCursor: false,
+                onComplete: function() {
+                  new Typed('#typed-innocence', {
+                    strings: ["Her innocence is reflected in her honest eyes and genuine heart. She sees the world with wonder and always believes in the good in people."],
+                    typeSpeed: 30,
+                    showCursor: false,
+                    onComplete: function() {
+                      new Typed('#typed-strength', {
+                        strings: ["Her strength is inspiring. She faces every challenge with courage and never gives up, no matter how tough life gets."],
+                        typeSpeed: 30,
+                        showCursor: false,
+                        onComplete: function() {
+                          new Typed('#typed-intelligence', {
+                            strings: ["Her intelligence shines through in her words and actions. She is thoughtful, quick-witted, and always eager to learn new things."],
+                            typeSpeed: 30,
+                            showCursor: false
+                          });
+                        }
+                      });
+                    }
+                  });
+                }
+              });
+            }
+          });
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
