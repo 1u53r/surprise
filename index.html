@@ -157,7 +157,7 @@
   
   <!-- Landing Banner with Animated Image Drop -->
   <section id="animated-banner" class="relative w-full h-[60vh] sm:h-screen pt-16 overflow-hidden responsive-section">
-    <div id="banner-anim" class="absolute inset-0 w-full h-full z-20"></div>
+    <!-- <div id="banner-anim" class="absolute inset-0 w-full h-full z-20"></div>
     <img 
       id="main-banner-img"
       src="solo/banner.png" 
@@ -169,15 +169,17 @@
       src="solo/small-banner.png" 
       alt="Banner Mobile" 
       class="block sm:hidden absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-1000 opacity-0" 
-      style="max-width:100vw; max-height:100vh;"/>
+      style="max-width:100vw; max-height:100vh;"/> -->
     <!-- Overlay with Text -->
     <div class="absolute inset-0 bg-black bg-opacity-40 z-30 flex items-center justify-center">
       <h1 
-        class="text-white text-2xl sm:text-4xl md:text-6xl font-extrabold text-center px-2 sm:px-4"
+        id="typed-banner"
+        class="text-white text-2xl sm:text-4xl md:text-6xl font-extrabold text-center px-2 sm:px-4 font-mono"
+        style="font-family: monospace; min-height: 3.5rem; display: flex; align-items: center; justify-content: center;"
         data-aos="fade-down"
         data-aos-duration="1200"
       >
-        The Beautiful Journey of Her Life
+        <span id="typed-banner-span"></span>
       </h1>
       <!-- Scroll Down Indicator -->
       <div class="scroll-indicator absolute bottom-4 sm:bottom-8 left-1/2 flex flex-col items-center animate-bounce" style="transform: translateX(-50%);">
@@ -206,7 +208,7 @@
   </section> -->
 
   <!-- Her Cuteness Section -->
-  <section class="w-full py-12 md:py-16 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 responsive-section">
+  <section class="w-full py-12 md:py-16 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-20 responsive-section">
     <img src="solo/IMG-20241215-WA0017.jpg" alt="Her Cuteness" class="w-56 h-80 md:w-80 md:h-[28rem] object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105 responsive-img-section" data-aos="fade-right" data-aos-duration="1200" />
     <div class="max-w-lg w-full bg-white bg-opacity-80 rounded-2xl p-4 md:p-8 shadow-lg transition-opacity duration-700 ease-in-out" data-aos="fade-left" data-aos-duration="1200">
       <h2 class="text-2xl md:text-3xl font-bold text-pink-600 mb-2 md:mb-4">Her Cuteness</h2>
@@ -215,7 +217,7 @@
   </section>
 
   <!-- Her Smile Section -->
-  <section class="w-full py-12 md:py-16  flex flex-col md:flex-row-reverse items-center justify-center gap-8 md:gap-12 responsive-section">
+  <section class="w-full py-12 md:py-16 flex flex-col md:flex-row-reverse items-center justify-center gap-8 md:gap-20 responsive-section">
     <img src="solo/IMG-20241205-WA0012.jpg" alt="Her Smile" class="w-56 h-80 md:w-80 md:h-[28rem] object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105 responsive-img-section" data-aos="fade-left" data-aos-duration="1200" />
     <div class="max-w-lg w-full bg-white bg-opacity-80 rounded-2xl p-4 md:p-8 shadow-lg transition-opacity duration-700 ease-in-out" data-aos="fade-right" data-aos-duration="1200">
       <h2 class="text-2xl md:text-3xl font-bold text-pink-600 mb-2 md:mb-4">Her Smile</h2>
@@ -224,7 +226,7 @@
   </section>
 
   <!-- Her Love Section -->
-  <section class="w-full py-12 md:py-16  flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 responsive-section">
+  <section class="w-full py-12 md:py-16 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-20 responsive-section">
     <img src="solo/IMG-20250119-WA0059.jpg" alt="Her Love" class="w-56 h-80 md:w-80 md:h-[28rem] object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105 responsive-img-section" data-aos="fade-right" data-aos-duration="1200" />
     <div class="max-w-lg w-full bg-white bg-opacity-80 rounded-2xl p-4 md:p-8 shadow-lg transition-opacity duration-700 ease-in-out" data-aos="fade-left" data-aos-duration="1200">
       <h2 class="text-2xl md:text-3xl font-bold text-pink-600 mb-2 md:mb-4">Her Love</h2>
@@ -233,7 +235,7 @@
   </section>
 
   <!-- Her Innocence Section -->
-  <section class="w-full py-12 md:py-16  flex flex-col md:flex-row-reverse items-center justify-center gap-8 md:gap-12 responsive-section">
+  <section class="w-full py-12 md:py-16 flex flex-col md:flex-row-reverse items-center justify-center gap-8 md:gap-20 responsive-section">
     <img src="solo/IMG-20250119-WA0122.jpg" alt="Her Innocence" class="w-56 h-80 md:w-80 md:h-[28rem] object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105 responsive-img-section" data-aos="fade-left" data-aos-duration="1200" />
     <div class="max-w-lg w-full bg-white bg-opacity-80 rounded-2xl p-4 md:p-8 shadow-lg transition-opacity duration-700 ease-in-out" data-aos="fade-right" data-aos-duration="1200">
       <h2 class="text-2xl md:text-3xl font-bold text-pink-600 mb-2 md:mb-4">Her Innocence</h2>
@@ -242,7 +244,7 @@
   </section>
 
   <!-- Her Strength Section -->
-  <section class="w-full py-12 md:py-16  flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 responsive-section">
+  <section class="w-full py-12 md:py-16 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-20 responsive-section">
     <img src="solo/IMG-20250505-WA0031.jpg" alt="Her Strength" class="w-56 h-80 md:w-80 md:h-[28rem] object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105 responsive-img-section" data-aos="fade-right" data-aos-duration="1200" />
     <div class="max-w-lg w-full bg-white bg-opacity-80 rounded-2xl p-4 md:p-8 shadow-lg transition-opacity duration-700 ease-in-out" data-aos="fade-left" data-aos-duration="1200">
       <h2 class="text-2xl md:text-3xl font-bold text-pink-600 mb-2 md:mb-4">Her Strength</h2>
@@ -251,7 +253,7 @@
   </section>
 
   <!-- Her Intelligence Section -->
-  <section class="w-full py-12 md:py-16  flex flex-col md:flex-row-reverse items-center justify-center gap-8 md:gap-12 responsive-section">
+  <section class="w-full py-12 md:py-16 flex flex-col md:flex-row-reverse items-center justify-center gap-8 md:gap-20 responsive-section">
     <img src="solo/IMG-20250205-WA0046 (1).jpg" alt="Her Intelligence" class="w-56 h-80 md:w-80 md:h-[28rem] object-cover rounded-2xl shadow-xl border-4 border-pink-300 transition-transform duration-700 ease-in-out hover:scale-105 responsive-img-section" data-aos="fade-left" data-aos-duration="1200" />
     <div class="max-w-lg w-full bg-white bg-opacity-80 rounded-2xl p-4 md:p-8 shadow-lg transition-opacity duration-700 ease-in-out" data-aos="fade-right" data-aos-duration="1200">
       <h2 class="text-2xl md:text-3xl font-bold text-pink-600 mb-2 md:mb-4">Her Intelligence</h2>
@@ -307,8 +309,20 @@
 
   <!-- Typed.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      function startBannerTyped() {
+        new Typed('#typed-banner-span', {
+          strings: ["The Beautiful Journey of Her Life"],
+          typeSpeed: 50,
+          backSpeed: 30,
+          backDelay: 1200,
+          showCursor: false,
+          loop: true
+        });
+      }
+      startBannerTyped();
       new Typed('#typed-cuteness', {
         strings: ["Her cuteness is not just in her looks, but in every little thing she does—her giggles, her playful expressions, and the way she brightens up every room she enters."],
         typeSpeed: 30,

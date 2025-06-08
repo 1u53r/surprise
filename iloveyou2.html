@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>I Love You Too</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Fira Mono', monospace;
+      background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+      min-height: 100vh;
+    }
+    .heart {
+      animation: pulse 1.2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.18); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen px-4 py-8">
+  <div class="w-full max-w-xs bg-white bg-opacity-90 rounded-3xl shadow-2xl p-6 flex flex-col items-center relative">
+    <div class="absolute -top-12 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+      <div class="relative">
+        <svg class="heart w-20 h-20 text-pink-400 drop-shadow-xl" fill="url(#heart-gradient)" viewBox="0 0 24 24">
+          <defs>
+            <radialGradient id="heart-gradient" cx="50%" cy="50%" r="80%">
+              <stop offset="0%" stop-color="#fff0f6"/>
+              <stop offset="60%" stop-color="#fbc2eb"/>
+              <stop offset="100%" stop-color="#f472b6"/>
+            </radialGradient>
+          </defs>
+          <path d="M12 21s-6.7-5.2-9.2-8.1C.7 10.2 0 8.6 0 7A6.1 6.1 0 0 1 6.1 1c1.7 0 3.3.7 4.4 2C11.6 1.7 13.2 1 14.9 1A6.1 6.1 0 0 1 21 7c0 1.6-.7 3.2-2.8 5.9C18.7 15.8 12 21 12 21z"/>
+        </svg>
+        <svg class="absolute w-8 h-8 text-pink-200 left-1/2 -top-4 -z-10 animate-ping" style="transform: translateX(-50%)" fill="currentColor" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" fill="#fbc2eb" fill-opacity="0.5"/>
+        </svg>
+      </div>
+      <span class="text-pink-400 text-xs mt-1 tracking-widest font-semibold uppercase">for you</span>
+    </div>
+    <h1 class="mt-10 text-3xl font-bold text-pink-600 text-center font-[Pacifico]">I Love You Too!</h1>
+    <p class="mt-4 text-lg text-gray-700 text-center font-mono">Your words mean the world to me.<br>My heart is yours, always and forever.</p>
+    <div class="mt-8 flex flex-col items-center gap-2">
+      <span class="text-2xl text-pink-500 font-[Pacifico]">❤️</span>
+      <span class="text-base text-gray-500">Forever yours</span>
+    </div>
+  </div>
+  <footer class="mt-8 text-xs text-gray-400 text-center w-full">Made with <span class="text-pink-400">♥</span> just for you</footer>
+</body>
+</html>
